@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-logcleaner` will be documented in this file
 
+## 1.0.3 - 2024-08-07
+### Changed
+- README
+
 ## 1.0.2 - 2024-08-07
 ### Changed
 - Locked thenetworg/oauth2-azure to "^2.2"

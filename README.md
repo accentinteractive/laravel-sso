@@ -48,7 +48,7 @@ SSO_AUTH_TENANT=common
 ## Step 4
 
 Add the middleware to your 'web' middleware group to place all endpoints behind SSO, or to another group if you want to guard only several of your endpoints..
-`\Accentinteractive\LaravelSso\Http\Middleware::class,`
+`\Accentinteractive\LaravelSso\Http\Middleware\AuthenticateSSO::class,`
 
 For Laravel >10, place it in bootstrap/app.php.
 ```php
