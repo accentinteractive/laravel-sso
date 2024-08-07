@@ -6,18 +6,27 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/accentinteractive/laravel-logcleaner.svg?style=flat-square)](https://packagist.org/packages/accentinteractive/laravel-logcleaner)
 
 - [Installation](#installation) 
-- [Examples](#usage) 
+- [Register a new Azure AD application](#register-a-new-azure-ad-application) 
 - [Config settings](#config-settings)
 
 ## Installation
 
 You can install the package via composer:
 
+## Step 1
+
 ```bash
 composer require accentinteractive/laravel-sso
 ```
+## Step 2
 
-Add the proper credentials to your .env file. Get the proper IDs anmd secrets from https://portal.azure.com/
+Register your application with the Azure portal. You need a valid Microsoft account and the proper authorization for your company.
+For a full manual, see [Registering a new Azure AD application](#register-a-new-azure-ad-application). 
+
+## Step 3
+
+Once your have registered the application with Azure AD, add the proper credentials to your .env file. Get the proper IDs and secrets from https://portal.azure.com/
+
 ```shell
 SSO_ENABLED=true
 
@@ -35,6 +44,8 @@ SSO_CLIENT_REDIRECT_URL="https://YOURDOMAIN.COM/login"
 
 SSO_AUTH_TENANT=common
 ```
+
+## Step 4
 
 Add the middleware to your 'web' middleware group to place all endpoints behind SSO, or to another group if you want to guard only several of your endpoints..
 `\App\Http\Middleware\AuthenticateSSO::class,`
@@ -57,6 +68,8 @@ For Laravel <=10, place it in app/Http/Kernel.php.
     \Accentinteractive\LaravelSso\Http\Middleware\AuthenticateSSO::class,
 ],
 ```
+
+## Step 5
 
 Optionally you can publish the config file with:
 ```
