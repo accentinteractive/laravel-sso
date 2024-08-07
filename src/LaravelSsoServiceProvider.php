@@ -2,7 +2,6 @@
 
 namespace Accentinteractive\LaravelSso;
 
-use Accentinteractive\LaravelSso\Commands\Logcleaner;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelSsoServiceProvider extends ServiceProvider
@@ -29,11 +28,5 @@ class LaravelSsoServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/sso.php', 'sso');
-
-        $this->app->bind('command.sso:run', Logcleaner::class);
-
-        $this->commands([
-            'command.sso:run',
-        ]);
     }
 }
