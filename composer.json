@@ -46,7 +46,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Accentinteractive\\LaravelSso\\LaravelLogcleanerServiceProvider"
+                "Accentinteractive\\LaravelSso\\LaravelSsoServiceProvider"
             ]
         }
     }
